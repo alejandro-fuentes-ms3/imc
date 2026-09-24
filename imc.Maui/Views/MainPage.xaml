@@ -4,31 +4,51 @@
              x:Class="imc.Maui.Views.MainPage"
              Title="Indice de masa corporal">
     <ScrollView>
-        <VerticalStackLayout
+        <Grid
+            RowDefinitions="auto,auto,*"
+            ColumnDefinitions="*"
+            RowSpacing="24"
          Padding="24"
-         Spacing="24">
+         >
          <Border 
           Stroke="LightGray" 
           StrokeThickness="2">
-          <VerticalStackLayout 
+          <Grid 
             Padding="18"
-            Spacing="8">
+              RowDefinitions="*,*"
+              ColumnDefinitions="auto,*"
+              ColumnSpacing="8"
+            RowSpacing="8">
            <Label 
+               VerticalOptions="Center"
+               Grid.Row="0"
+               Grid.Column="0"
             Text="proporcione el peso en kilogramos:"/>
            <Entry
+               Grid.Row="0"
+               Grid.Column="1"
             BackgroundColor="WhiteSmoke"
             x:Name="PesoENtry"
                TextColor="Black"/>
            <Label 
-            Text="proporcione la estatura en metros"/>
+               Grid.Row="1"
+               Grid.Column="0"
+               
+            Text="proporcione la estatura en metros:"/>
            <Entry 
+               VerticalOptions="Center"
+               Grid.Row="1"
+               Grid.Column="1"
             BackgroundColor="WhiteSmoke"
                TextColor="Black"
                x:Name="EstaturaEntry"/>
-          </VerticalStackLayout>
+          </Grid>
          </Border>
          <HorizontalStackLayout 
+             Grid.Row="1"
+             Grid.Column="0"
            Spacing="24" 
+             
            HorizontalOptions="Center">
           <Button 
            Text="calcular" 
@@ -39,6 +59,8 @@
            Clicked="OnLimpiarButtonClicked"/>
          </HorizontalStackLayout>
          <Border 
+             Grid.Row="2"
+             Grid.Column="0"
           Stroke="LightGray" 
           StrokeThickness="2">
              
@@ -48,6 +70,7 @@
           </Border.StrokeShape>
              
           <VerticalStackLayout  
+              
            Padding="18" 
            Spacing="18">
            <Label 
@@ -68,6 +91,6 @@
             FontAttributes="Bold"/>
           </VerticalStackLayout>
          </Border>
-        </VerticalStackLayout>
+        </Grid>
     </ScrollView>
 </ContentPage>
