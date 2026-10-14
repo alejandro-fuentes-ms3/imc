@@ -54,11 +54,11 @@
           <Button 
            Text="calcular" 
            BackgroundColor="Green"
-           Command="{Binding Path=Calcularcommand}"
+           Command="{Binding Path=CalcularCommand}"
            />
           <Button 
            Text="limpiar"
-           Command="{Binding Path=Limpiarcommand}"
+           Command="{Binding Path=LimpiarCommand}"
            />
          </HorizontalStackLayout>
          <Border 
@@ -84,9 +84,12 @@
             FontSize="Medium" 
             FontAttributes="Bold"/>
            <Label 
-                Text="la situacion nutricional de la persona es:"/>
+                Text="la situacion nutricional de la persona es:"
+               TextColor="White"/>
+              
            <Label
             Text="{Binding Path=EstadoNutricional}" 
+               TextColor="White"
             HorizontalOptions="Center" 
             FontSize="Medium" 
             FontAttributes="Bold"/>
