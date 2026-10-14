@@ -25,10 +25,10 @@
                Grid.Column="0"
             Text="proporcione el peso en kilogramos:"/>
            <Entry
+               Text="{Binding Path=Peso}"
                Grid.Row="0"
                Grid.Column="1"
             BackgroundColor="WhiteSmoke"
-            x:Name="PesoENtry"
                TextColor="Black"/>
            <Label 
                Grid.Row="1"
@@ -36,12 +36,13 @@
                
             Text="proporcione la estatura en metros:"/>
            <Entry 
+               Text="{Binding Path=Estatura}"
                VerticalOptions="Center"
                Grid.Row="1"
                Grid.Column="1"
             BackgroundColor="WhiteSmoke"
                TextColor="Black"
-               x:Name="EstaturaEntry"/>
+              />
           </Grid>
          </Border>
          <HorizontalStackLayout 
@@ -53,10 +54,12 @@
           <Button 
            Text="calcular" 
            BackgroundColor="Green"
-           Clicked="OnCalcularButtonClicked"/>
+           Command="{Binding Path=Calcularcommand}"
+           />
           <Button 
            Text="limpiar"
-           Clicked="OnLimpiarButtonClicked"/>
+           Command="{Binding Path=Limpiarcommand}"
+           />
          </HorizontalStackLayout>
          <Border 
              Grid.Row="2"
@@ -75,17 +78,15 @@
            Spacing="18">
            <Label 
             Text=" el indice de masa corporal es:"/>
-           <Label 
-            x:Name="ImcLabel"
-            Text="23.4567" 
+           <Label
+            Text="{Binding Path=Imc}" 
             HorizontalOptions="Center" 
             FontSize="Medium" 
             FontAttributes="Bold"/>
            <Label 
                 Text="la situacion nutricional de la persona es:"/>
            <Label
-            x:Name="SitucionNutricionalLabel"
-            Text="peso normal" 
+            Text="{Binding Path=EstadoNutricional}" 
             HorizontalOptions="Center" 
             FontSize="Medium" 
             FontAttributes="Bold"/>
